@@ -1,0 +1,45 @@
+.project-card {
+    padding: 28px;
+    border: 1px solid #e1e9f2;
+    border-radius: 14px;
+    background: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(36, 85, 143, 0.10);
+}
+
+.project-card__title {
+    margin-bottom: 12px;
+    color: #243247;
+}
+
+.project-card__description {
+    color: #68788c;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.project-card__tags span {
+    background: #e5effa;
+    color: #24558f;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.project-card__link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3976bd;
+    font-weight: bold;
+}

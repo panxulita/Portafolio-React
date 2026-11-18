@@ -1,0 +1,292 @@
+/* =========================
+   1. PRESENTACIÓN PRINCIPAL
+========================= */
+
+.home__hero {
+    max-width: 1100px;
+    min-height: 560px;
+    margin: auto;
+    padding: 80px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.home__content {
+    flex: 1;
+}
+
+.home__greeting,
+.home__label,
+.projects__label,
+.contact__label {
+    color: var(--primary);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.home__title {
+    font-size: 52px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.home__title span {
+    color: var(--primary);
+}
+
+.home__subtitle {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.home__description {
+    margin-top: 25px;
+    max-width: 520px;
+    color: var(--text-light);
+}
+
+.home__image {
+    flex: 0 0 320px;
+}
+
+.home__image img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid var(--background-soft);
+    box-shadow: 0 10px 30px rgba(36, 85, 143, 0.10);
+}
+/* =========================
+   2. SOBRE MÍ
+========================= */
+
+.home__about {
+    background: var(--background-soft);
+    padding: 85px max(30px, calc((100% - 1040px) / 2));
+}
+
+.home__heading {
+    font-size: 35px;
+    margin: 5px 0 35px;
+}
+
+.home__text {
+    color: var(--text-light);
+    max-width: 750px;
+}
+
+.home__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.home__skills span {
+    background: #e5effa;
+    color: var(--primary-dark);
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================
+   3. PROYECTOS
+========================= */
+
+.projects {
+    max-width: 1100px;
+    margin: auto;
+    padding: 85px 30px;
+}
+
+.projects__header {
+    margin-bottom: 35px;
+}
+
+.projects__title {
+    font-size: 35px;
+    margin-top: 5px;
+}
+
+.projects__description {
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* =========================
+   4. CONTACTO
+========================= */
+
+.contact {
+    text-align: center;
+    background: var(--background-soft);
+    padding: 85px 30px;
+    min-height: 430px;
+}
+
+.contact__title {
+    font-size: 35px;
+    margin: 5px 0 25px;
+}
+
+.contact__description {
+    color: var(--text-light);
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+.contact__email,
+.contact__github {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.contact__email {
+    background: var(--primary);
+    color: white;
+}
+
+.contact__email:hover {
+    background: var(--primary-dark);
+}
+
+.contact__github {
+    margin-left: 15px;
+    color: var(--primary-dark);
+    border: 1px solid var(--primary);
+}
+
+.contact__github:hover {
+    background: #e5effa;
+}
+
+/* =========================
+   5. PÁGINA NO ENCONTRADA
+========================= */
+
+.not-found {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.not-found__title {
+    color: var(--primary);
+    font-size: 65px;
+}
+
+.not-found__link {
+    margin-top: 20px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* =========================
+   6. PIE DE PÁGINA
+========================= */
+
+.footer {
+    padding: 25px;
+    text-align: center;
+    background: #243247;
+    color: white;
+    font-size: 13px;
+}
+
+/* =========================
+   7. RESPONSIVIDAD
+========================= */
+
+@media (max-width: 1023px) {
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home__title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home__hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 22px;
+    }
+
+    .home__title {
+        font-size: 36px;
+    }
+
+    .home__subtitle {
+        font-size: 18px;
+    }
+
+    .home__description {
+        margin: 20px auto;
+    }
+
+    .home__about {
+        padding: 60px 22px;
+    }
+
+    .home__heading,
+    .projects__title,
+    .contact__title {
+        font-size: 29px;
+    }
+
+    .home__skills {
+        justify-content: center;
+    }
+
+    .projects {
+        padding: 60px 22px;
+    }
+
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        padding: 60px 22px;
+    }
+
+    .contact__github {
+        margin: 15px 0 0;
+    }
+
+    .footer {
+        padding: 22px 15px;
+    }
+    .home__image {
+    flex: auto;
+    width: 220px;
+    }
+
+    .home__image img {
+        width: 220px;
+        height: 220px;
+    }
+}
