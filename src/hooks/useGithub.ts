@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import { getGithubRepos } from '../services/githubService';
 import type { GitHubRepo, FetchState } from '../types';
 
@@ -11,6 +10,8 @@ export function useGithub() {
     });
 
     useEffect(() => {
+        const controller = new AbortController();
+
         async function loadRepos() {
             try {
                 setState({
@@ -19,15 +20,18 @@ export function useGithub() {
                     error: null
                 });
 
-                const repos = await getGithubRepos();
+                const repos = await getGithubRepos(controller.signal);
 
                 setState({
                     data: repos,
                     loading: false,
                     error: null
                 });
-
             } catch (error) {
+                if (error instanceof Error && error.name === 'AbortError') {
+                    return;
+                }
+
                 setState({
                     data: null,
                     loading: false,
@@ -39,6 +43,10 @@ export function useGithub() {
         }
 
         loadRepos();
+
+        return () => {
+            controller.abort();
+        };
     }, []);
 
     return {
